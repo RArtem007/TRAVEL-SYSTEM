@@ -944,37 +944,3 @@ int main() {
 
     return 0;
 }
-
-/*
-=============================================================
-  КОМПІЛЯЦІЯ ТА ЗАПУСК:
-
-  Linux / Mac:
-    g++ -std=c++17 -o travel travel_system.cpp && ./travel
-
-  Windows (MinGW):
-    g++ -std=c++17 -o travel.exe travel_system.cpp && travel.exe
-
-=============================================================
-  ДЕМОНСТРАЦІЯ КОНЦЕПЦІЙ:
-
-  ПОЛІМОРФІЗМ:
-    - Tour::display() викликає displayExtras() — у кожного типу своя
-    - Tour::getType() — повертає різні рядки залежно від класу
-    - Displayable* може вказувати на Tour або User
-    - Validator* може бути EmailValidator або PasswordValidator
-    - TourManager::displayAll() — один цикл, різна поведінка
-
-  КОМПОЗИЦІЯ:
-    - User містить Credentials як поле (не вказівник)
-    - Credentials не існує без User
-    - Знищення User → автоматичне знищення Credentials
-
-  АГРЕГАЦІЯ:
-    - TourManager зберігає vector<Tour*>
-    - Tour* створюються поза TourManager (в loadSampleData)
-    - UI отримує TourManager& і AuthManager& ззовні
-    - Тури теоретично можуть існувати незалежно від менеджера
-
-=============================================================
-*/
